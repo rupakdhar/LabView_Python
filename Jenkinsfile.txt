@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git 'C:\Users\rupak\OneDrive\Documents\GitHub\LabView_Python'
+            }
+        }
+
+        stage('Build LabVIEW') {
+            steps {
+                bat '''
+                "C:\\Program Files (x86)\\National Instruments\\Shared\\LabVIEW CLI\\LabVIEWCLI.exe" ^
+                -OperationName ExecuteBuildSpec ^
+                -ProjectPath "%WORKSPACE%\\MyProject.lvproj" ^
+                -BuildSpecName "MyApplication"
+                '''
+            }
+        }
+
+        stage('Archive Artifacts') {
+            steps {
+                archiveArtifacts artifacts: 'build/**/*.*'
+            }
+        }
+
+    }
+}
