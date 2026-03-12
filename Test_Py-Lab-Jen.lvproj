@@ -11,9 +11,9 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="J_Test" Type="Folder">
-			<Item Name="Jenkins_VI.vi" Type="VI" URL="../J_Test/Jenkins_VI.vi"/>
+			<Item Name="Jenkins-test_VI.vi" Type="VI" URL="../J_Test/Jenkins-test_VI.vi"/>
+			<Item Name="Jenkinsfile.txt" Type="Document" URL="../Jenkinsfile.txt"/>
 		</Item>
-		<Item Name="Jenkinsfile.txt" Type="Document" URL="../Jenkinsfile.txt"/>
 		<Item Name="LabView_main.vi" Type="VI" URL="../LabView_main.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build">
